@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Muhammad Ilham | Proyek</title>
+  <meta name="description" content="Lihat proyek latihan web Muhammad Ilham, termasuk halaman profil, form kontak, dan jadwal belajar.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
@@ -13,21 +14,23 @@
   <header>
     <div class="container navbar">
       <h1>Muhammad Ilham</h1>
-      <nav class="menu-laptop">
+      <nav class="menu-laptop" aria-label="Navigasi utama">
         <ul>
           <li><a href="index.html">Beranda</a></li>
-          <li><a href="proyek.html">Proyek</a></li>
+          <li><a href="proyek.html" aria-current="page">Proyek</a></li>
           <li><a href="kontak.html">Kontak</a></li>
+          <li><a href="js/kantin.sekolah/kantin.smkn1.html">Kantin Sekolah</a></li>
         </ul>
       </nav>
       <!-- Tantangan: menu ponsel yang bisa dibuka-tutup -->
       <details class="menu-ponsel">
         <summary>Menu</summary>
-        <nav>
+        <nav aria-label="Navigasi utama">
           <ul>
             <li><a href="index.html">Beranda</a></li>
-            <li><a href="proyek.html">Proyek</a></li>
+            <li><a href="proyek.html" aria-current="page">Proyek</a></li>
             <li><a href="kontak.html">Kontak</a></li>
+            <li><a href="js/kantin.sekolah/kantin.smkn1.html">Kantin Sekolah</a></li>
           </ul>
         </nav>
       </details>
@@ -38,7 +41,7 @@
     <div class="container">
       <section>
         <h2>Proyek Saya</h2>
-        <p>Kumpulan hasil belajar saya di Kelas Industri UBIG.</p>
+        <p class="pengantar">Kumpulan hasil belajar saya di Kelas Industri UBIG.</p>
 
         <div class="daftar-kartu">
           <article class="kartu">
@@ -66,7 +69,7 @@
         <h2>Pertanyaan yang Sering Diajukan</h2>
         <details>
           <summary>Bahasa apa yang dipakai untuk membuat proyek ini?</summary>
-          <p>Semua proyek di halaman ini dibuat dengan HTML. Tampilannya akan saya rapikan dengan CSS mulai Minggu 03.</p>
+          <p>Proyek-proyek ini dibuat dengan HTML dan CSS sebagai bagian dari proses belajar pengembangan web.</p>
         </details>
         <details>
           <summary>Apakah saya menerima pesanan pembuatan website?</summary>
@@ -77,9 +80,9 @@
   </main>
 
   <footer>
-    <p>Kontak: <a href="mailto:muhammadilham@example.com">muhammadilham@example.com</a> |
-      <a href="https://github.com/" target="_blank">GitHub</a> |
-      <a href="https://www.youtube.com/" target="_blank">YouTube</a></p>
+    <p>Kontak: <a href="mailto:hamtzyy1211@gmail.com">hamtzyy1211@gmail.com</a> |
+      <a href="https://github.com/Ilham-Brengsek" target="_blank" rel="noopener noreferrer">GitHub</a> |
+      <a href="https://youtube.com/@ilham1212-j1l?si=qXObnCH-qGrHHFki" target="_blank" rel="noopener noreferrer">YouTube</a></p>
     <p>&copy; 2026 Muhammad Ilham. Dibuat di Kelas Industri UBIG.</p>
   </footer>
 </body>

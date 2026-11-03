@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Muhammad Ilham | Kontak</title>
+  <meta name="description" content="Hubungi Muhammad Ilham melalui form kontak untuk bertanya atau membicarakan kerja sama proyek.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
@@ -13,21 +14,23 @@
   <header>
     <div class="container navbar">
       <h1>Muhammad Ilham</h1>
-      <nav class="menu-laptop">
+      <nav class="menu-laptop" aria-label="Navigasi utama">
         <ul>
           <li><a href="index.html">Beranda</a></li>
           <li><a href="proyek.html">Proyek</a></li>
-          <li><a href="kontak.html">Kontak</a></li>
+          <li><a href="kontak.html" aria-current="page">Kontak</a></li>
+          <li><a href="js/kantin.sekolah/kantin.smkn1.html">Kantin Sekolah</a></li>
         </ul>
       </nav>
       <!-- Tantangan: menu ponsel yang bisa dibuka-tutup -->
       <details class="menu-ponsel">
         <summary>Menu</summary>
-        <nav>
+        <nav aria-label="Navigasi utama">
           <ul>
             <li><a href="index.html">Beranda</a></li>
             <li><a href="proyek.html">Proyek</a></li>
-            <li><a href="kontak.html">Kontak</a></li>
+            <li><a href="kontak.html" aria-current="page">Kontak</a></li>
+            <li><a href="js/kantin.sekolah/kantin.smkn1.html">Kantin Sekolah</a></li>
           </ul>
         </nav>
       </details>
@@ -36,47 +39,52 @@
 
   <main>
     <div class="container">
-      <section class="kartu">
+      <section class="kartu kontak-card">
         <h2>Hubungi Saya</h2>
-        <p>Punya pertanyaan atau ingin bekerja sama? Isi form berikut.</p>
+        <p class="pengantar">Punya pertanyaan atau ingin bekerja sama? Kirim pesan melalui form berikut.</p>
+        <p class="catatan-form">Aplikasi email akan terbuka untuk mengirim pesan. Periksa kembali isinya lalu tekan Kirim.</p>
 
-        <form>
-          <p>
-            <label for="nama">Nama lengkap</label><br>
-            <input type="text" id="nama" name="nama" placeholder="Nama" required>
-          </p>
-          <p>
-            <label for="email">Email</label><br>
-            <input type="email" id="email" name="email" placeholder="Gmail" required>
-          </p>
-          <p>
-            <label for="hp">Nomor HP</label><br>
-            <input type="tel" id="hp" name="hp" placeholder="+62" required>
-          </p>
-          <p>
-            <label for="keperluan">Keperluan</label><br>
-            <select id="keperluan" name="keperluan" required>
-              <option value="">Keperluan Anda</option>
-              <option value="bertanya">Bertanya</option>
-              <option value="kerja-sama">Kerja sama proyek</option>
-              <option value="lainnya">Lainnya</option>
-            </select>
-          </p>
-          <p>
-            <label for="pesan">Pesan</label><br>
-            <textarea id="pesan" name="pesan" rows="5" cols="40" placeholder="Tulis pesanmu di sini" required></textarea>
-          </p>
-          <button type="submit">Kirim Pesan</button>
+        <form action="mailto:hamtzyy1211@gmail.com" method="post" enctype="text/plain" data-contact-form data-recipient="hamtzyy1211@gmail.com">
+          <div class="form-grid">
+            <p class="form-field">
+              <label for="nama">Nama lengkap</label>
+              <input type="text" id="nama" name="nama" placeholder="Nama Anda" autocomplete="name" required>
+            </p>
+            <p class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="nama@email.com" autocomplete="email" required>
+            </p>
+            <p class="form-field">
+              <label for="hp">Nomor HP <span class="opsional">(opsional)</span></label>
+              <input type="tel" id="hp" name="hp" placeholder="+62" autocomplete="tel">
+            </p>
+            <p class="form-field">
+              <label for="keperluan">Keperluan</label>
+              <select id="keperluan" name="keperluan" required>
+                <option value="">Pilih keperluan</option>
+                <option value="Bertanya">Bertanya</option>
+                <option value="Kerja sama proyek">Kerja sama proyek</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </p>
+            <p class="form-field form-field-penuh">
+              <label for="pesan">Pesan</label>
+              <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini" required></textarea>
+            </p>
+          </div>
+          <button type="submit">Buka aplikasi email</button>
+          <p class="form-status" role="status" aria-live="polite" hidden></p>
         </form>
       </section>
     </div>
   </main>
 
   <footer>
-    <p>Kontak: <a href="mailto:muhammadilham@example.com">muhammadilham@example.com</a> |
-      <a href="https://github.com/" target="_blank">GitHub</a> |
-      <a href="https://www.youtube.com/" target="_blank">YouTube</a></p>
+      <p>Kontak: <a href="mailto:hamtzyy1211@gmail.com">hamtzyy1211@gmail.com</a> |
+        <a href="https://github.com/Ilham-Brengsek" target="_blank" rel="noopener noreferrer">GitHub</a> |
+        <a href="https://youtube.com/@ilham1212-j1l?si=qXObnCH-qGrHHFki" target="_blank" rel="noopener noreferrer">YouTube</a></p>
     <p>&copy; 2026 Muhammad Ilham. Dibuat di Kelas Industri UBIG.</p>
   </footer>
+    <script src="js/kontak.js" defer></script>
 </body>
 </html>

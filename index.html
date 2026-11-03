@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Muhammad Ilham | Beranda</title>
+  <meta name="description" content="Portofolio Muhammad Ilham, siswa SMK yang sedang belajar pengembangan web di Kelas Industri UBIG.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
@@ -13,9 +14,9 @@
   <header>
     <div class="container navbar">
       <h1>Muhammad Ilham</h1>
-      <nav class="menu-laptop">
+      <nav class="menu-laptop" aria-label="Navigasi utama">
         <ul>
-          <li><a href="index.html">Beranda</a></li>
+          <li><a href="index.html" aria-current="page">Beranda</a></li>
           <li><a href="proyek.html">Proyek</a></li>
           <li><a href="kontak.html">Kontak</a></li>
           <li><a href="js/kantin.sekolah/kantin.smkn1.html">Kantin Sekolah</a></li>
@@ -24,9 +25,9 @@
       <!-- Tantangan: menu ponsel yang bisa dibuka-tutup -->
       <details class="menu-ponsel">
         <summary>Menu</summary>
-        <nav>
+        <nav aria-label="Navigasi utama">
           <ul>
-            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html" aria-current="page">Beranda</a></li>
             <li><a href="proyek.html">Proyek</a></li>
             <li><a href="kontak.html">Kontak</a></li>
             <li><a href="js/kantin.sekolah/kantin.smkn1.html">Kantin Sekolah</a></li>
@@ -41,15 +42,18 @@
       <section class="hero">
         <img src="foto_saya.jpeg" alt="Foto profil muhammad ilham" width="180">
         <div>
-          <h2>HALO, saya Ilham👋</h2>
+          <h2>Halo, saya Ilham.</h2>
           <p>Siswa kelas X SMK, calon Junior Web Developer di Kelas Industri UBIG.</p>
-          <a href="proyek.html" class="tombol">Lihat Proyek Saya</a>
+          <div class="hero-actions">
+            <a href="proyek.html" class="tombol">Lihat Proyek</a>
+            <a href="kontak.html" class="tombol tombol-sekunder">Hubungi Saya</a>
+          </div>
         </div>
       </section>
 
       <section class="kartu">
         <h2>Tentang Saya</h2>
-        <p>Saya tinggal di pasuruan dan senang mencoba hal baru di dunia teknologi. Saya ingin bisa membuat website yang bermanfaat untuk sekolah dan UMKM di sekitar rumah.</p>
+        <p>Saya tinggal di Pasuruan dan senang mencoba hal baru di dunia teknologi. Saya ingin membuat website yang bermanfaat untuk sekolah dan UMKM di sekitar rumah.</p>
       </section>
 
       <div class="daftar-kartu">
@@ -57,7 +61,7 @@
           <h2>Hobi</h2>
           <ul>
             <li>Bermain bola</li>
-            <li>Bermian volly</li>
+            <li>Bermain voli</li>
             <li>Mendengarkan musik</li>
           </ul>
         </section>
@@ -84,41 +88,43 @@
 
       <section class="kartu">
         <h2>Jadwal Belajar</h2>
-        <table>
-          <caption>Jadwal belajar mandiri setiap minggu</caption>
-          <thead>
-            <tr>
-              <th>Hari</th>
-              <th>Waktu</th>
-              <th>Kegiatan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Jumat</td>
-              <td>19.00 - 20.00</td>
-              <td>Membaca ulang modul</td>
-            </tr>
-            <tr>
-              <td>Sabtu</td>
-              <td>19.00 - 21.00</td>
-              <td>Mengerjakan tugas praktik</td>
-            </tr>
-            <tr>
-              <td>Rabu</td>
-              <td>19.30 - 20.30</td>
-              <td>Merekam video dan menulis laporan</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-scroll">
+          <table>
+            <caption>Jadwal belajar mandiri setiap minggu</caption>
+            <thead>
+              <tr>
+                <th scope="col">Hari</th>
+                <th scope="col">Waktu</th>
+                <th scope="col">Kegiatan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Rabu</td>
+                <td>19.30 - 20.30</td>
+                <td>Merekam video dan menulis laporan</td>
+              </tr>
+              <tr>
+                <td>Jumat</td>
+                <td>19.00 - 20.00</td>
+                <td>Membaca ulang modul</td>
+              </tr>
+              <tr>
+                <td>Sabtu</td>
+                <td>19.00 - 21.00</td>
+                <td>Mengerjakan tugas praktik</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </div>
   </main>
 
   <footer>
-    <p>Kontak: <a href="mailto:muhammadilham@example.com">muhammadilham@example.com</a> |
-      <a href="https://github.com/" target="_blank">GitHub</a> |
-      <a href="https://youtube.com/@ilham1212-j1l?si=qXObnCH-qGrHHFki" target="_blank">YouTube</a></p>
+    <p>Kontak: <a href="mailto:hamtzyy1211@gmail.com">hamtzyy1211@gmail.com</a> |
+      <a href="https://github.com/Ilham-Brengsek" target="_blank" rel="noopener noreferrer">GitHub</a> |
+      <a href="https://youtube.com/@ilham1212-j1l?si=qXObnCH-qGrHHFki" target="_blank" rel="noopener noreferrer">YouTube</a></p>
     <p>&copy; 2026 Muhammad Ilham. Dibuat di Kelas Industri UBIG.</p>
   </footer>
 </body>

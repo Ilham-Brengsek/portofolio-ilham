@@ -2,7 +2,7 @@
 // Kalkulator nilai rapor di Console
 
 // 1. Pesan pertama ke Console 
-console.log("Halo, saya Andi!");
+console.log("Halo, muhammad ilham");
 console.log("Ini latihan JavaScript pertamaku.");
 
 // 2. Data siswa
@@ -61,7 +61,7 @@ let kehadiran = 90;
  console.log(`predikat(70) = ${predikat(70)}`); // C
  console.log(`predikat(69) = ${predikat(69)}`); // D
 
-// 6. Rapor beberapa siswa
+// 6. contoh beberapa siswa
 console.log(rapor("Andi", 85, 78, 89));
 console.log(rapor("Sinta", 92, 88, 96));
 console.log(rapor("Budi", 70, 65, 72));

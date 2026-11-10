@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#d9f0e9"/>
+  <path d="M310 275l75-85 55 60 40-45 75 70H310z" fill="#087e83" opacity=".8"/>
+  <circle cx="520" cy="155" r="28" fill="#f2bd54"/>
+  <rect x="270" y="115" width="260" height="220" rx="18" fill="none" stroke="#183b4e" stroke-width="12"/>
+  <text x="400" y="385" fill="#183b4e" font-family="Arial, sans-serif" font-size="26" text-anchor="middle">Tambahkan foto proyek</text>
+</svg>

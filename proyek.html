@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Muhammad Ilham | Proyek</title>
-  <meta name="description" content="Lihat proyek latihan web Muhammad Ilham, termasuk halaman profil, form kontak, dan jadwal belajar.">
+  <meta name="description" content="Lihat proyek latihan web Muhammad Ilham, termasuk halaman profil, form kontak, jadwal belajar, dan kalkulator nilai.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header>
@@ -20,6 +21,7 @@
           <li><a href="proyek.html" aria-current="page">Proyek</a></li>
           <li><a href="kontak.html">Kontak</a></li>
           <li><a href="js/kantin.sekolah/kantin.smkn1.html">Kantin Sekolah</a></li>
+          <li><a href="kalkulator.html">Kalkulator Nilai</a></li>
         </ul>
       </nav>
       <!-- Tantangan: menu ponsel yang bisa dibuka-tutup -->
@@ -31,9 +33,11 @@
             <li><a href="proyek.html" aria-current="page">Proyek</a></li>
             <li><a href="kontak.html">Kontak</a></li>
             <li><a href="js/kantin.sekolah/kantin.smkn1.html">Kantin Sekolah</a></li>
+            <li><a href="kalkulator.html">Kalkulator Nilai</a></li>
           </ul>
         </nav>
       </details>
+      <button type="button" id="tombol-tema">Mode Gelap</button>
     </div>
   </header>
 
@@ -41,27 +45,16 @@
     <div class="container">
       <section>
         <h2>Proyek Saya</h2>
-        <p class="pengantar">Kumpulan hasil belajar saya di Kelas Industri UBIG.</p>
+        <p class="pengantar">Kumpulan hasil belajar saya di Kelas Industri UBIG. Jika foto belum tersedia, placeholder akan ditampilkan. Tambahkan foto ke folder img dengan nama file yang sesuai dengan proyek.</p>
 
-        <div class="daftar-kartu">
-          <article class="kartu">
-            <h3>Halaman Profil Pertama</h3>
-            <img src="modul_1.jpeg" alt="Tangkapan layar halaman profil Muhammad Ilham" width="280">
-            <p>Halaman web pertama saya, berisi perkenalan, foto, hobi, cita-cita, keahlian, dan kontak. Dibuat dengan HTML dasar di Minggu 01.</p>
-          </article>
-
-          <article class="kartu">
-            <h3>Form Kontak</h3>
-            <img src="img/proyek-kontak.png" alt="Tangkapan layar form kontak berisi nama, email, nomor HP, keperluan, dan pesan" width="280">
-            <p>Form untuk menghubungi saya. Setiap isian memiliki label dan wajib diisi, sehingga browser menolak form yang masih kosong.</p>
-          </article>
-
-          <article class="kartu">
-            <h3>Tabel Jadwal Belajar</h3>
-            <img src="img/proyek-jadwal.png" alt="Tangkapan layar tabel jadwal belajar mandiri" width="280">
-            <p>Tabel berisi jadwal belajar mandiri saya setiap minggu, disusun dengan thead dan tbody.</p>
-          </article>
+        <div class="filter-group" aria-label="Filter proyek">
+          <button type="button" class="tombol-filter aktif" id="filter-semua">Semua</button>
+          <button type="button" class="tombol-filter" id="filter-html">HTML</button>
+          <button type="button" class="tombol-filter" id="filter-css">CSS</button>
+          <button type="button" class="tombol-filter" id="filter-js">JavaScript</button>
         </div>
+        <p id="jumlah-proyek" class="pengantar"></p>
+        <div id="daftar-proyek" class="daftar-kartu" aria-live="polite"></div>
       </section>
 
       <!-- FAQ dengan details dan summary -->

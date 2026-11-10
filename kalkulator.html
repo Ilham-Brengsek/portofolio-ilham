@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Ilham | Kalkulator Nilai</title>
+  <meta name="description" content="Hitung rata-rata dan predikat nilai tugas, UTS, dan UAS.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/kalkulator.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <h1>Muhammad Ilham</h1>
+      <nav class="menu-laptop" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="proyek.html">Proyek</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+          <li><a href="js/kantin.sekolah/kantin.smkn1.html">Kantin Sekolah</a></li>
+          <li><a href="kalkulator.html" aria-current="page">Kalkulator Nilai</a></li>
+        </ul>
+      </nav>
+      <details class="menu-ponsel">
+        <summary>Menu</summary>
+        <nav aria-label="Navigasi utama">
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="proyek.html">Proyek</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+            <li><a href="js/kantin.sekolah/kantin.smkn1.html">Kantin Sekolah</a></li>
+            <li><a href="kalkulator.html" aria-current="page">Kalkulator Nilai</a></li>
+          </ul>
+        </nav>
+      </details>
+      <button type="button" id="tombol-tema" aria-label="Ubah tema halaman">Mode Gelap</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="kartu kontak-card">
+        <h2>Kalkulator Nilai</h2>
+        <p class="pengantar">Masukkan nilai tugas, UTS, dan UAS (0 sampai 100) untuk mengetahui rata-rata dan predikat.</p>
+
+        <form id="form-kalkulator">
+          <div class="form-grid">
+            <p class="form-field">
+              <label for="tugas">Nilai Tugas</label>
+              <input type="number" id="tugas" name="tugas" min="0" max="100" step="any" placeholder="Contoh: 90" required>
+            </p>
+            <p class="form-field">
+              <label for="uts">Nilai UTS</label>
+              <input type="number" id="uts" name="uts" min="0" max="100" step="any" placeholder="Contoh: 80" required>
+            </p>
+            <p class="form-field">
+              <label for="uas">Nilai UAS</label>
+              <input type="number" id="uas" name="uas" min="0" max="100" step="any" placeholder="Contoh: 70" required>
+            </p>
+          </div>
+          <button type="submit">Hitung Nilai</button>
+          <p class="form-status" id="hasil-kalkulator" aria-live="polite" hidden></p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Kontak: <a href="mailto:hamtzyy1211@gmail.com">hamtzyy1211@gmail.com</a> |
+      <a href="https://github.com/Ilham-Brengsek" target="_blank" rel="noopener noreferrer">GitHub</a> |
+      <a href="https://youtube.com/@ilham1212-j1l?si=qXObnCH-qGrHHFki" target="_blank" rel="noopener noreferrer">YouTube</a></p>
+    <p>&copy; 2026 Muhammad Ilham. Dibuat di Kelas Industri UBIG.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Ilham | Kontak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <h1>Muhammad Ilham</h1>
+      <nav class="menu-laptop">
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="proyek.html">Proyek</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+          <li><a href="kalkulator.html">kalkulator nilai</a></li>
+        </ul>
+      </nav>
+      
+      <details class="menu-ponsel">
+        <summary>Menu</summary>
+        <nav>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="proyek.html">Proyek</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+            <li><a href="kalkulator.html">kalkulator nilai</a></li>
+          </ul>
+        </nav>
+      </details>
+      <button type="button" id="tombol-tema" class="tombol-tema">
+          Mode gelap
+        </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="kartu">
+        <h2>KALKULATOR NILAI</h2>
+        <p>Masukkan nilai tugas, UTS, dan UAS lalu tekan tombol Hitung Nilai</p>
+
+        <form id="form">
+          <p>
+            <label for="nama">Nilai Tugas</label><br>
+            <input type="number" id="tugas" name="tugas" placeholder="Contoh : 90" required>
+          </p>
+          <p>
+            <label for="email">Nilai UTS</label><br>
+            <input type="number" id="uts" name="uts" placeholder="Contoh : 80" required>
+          </p>
+          <p>
+            <label for="hp">Nilai UAS</label><br>
+            <input type="number" id="uas" name="uas" placeholder="Contoh : 70" required>
+          </p>
+          
+          <button type="submit" id="hitung">Hitung Nilai</button>
+
+            <p id="hasil"></p>
+
+        </form>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <p>Kontak: <a href="mailto:hamtzyy1211@gmail.com">hamtzyy@gmail.com</a> |
+      <a href="https://github.com/Ilham-Brengsek" target="_blank">GitHub</a> |
+      <a href="https://youtube.com/@ilham1212-j1l?si=qXObnCH-qGrHHFki" target="_blank">YouTube</a></p>
+    <p>&copy; 2026 muhamaad ilham. Dibuat di Kelas Industri UBIG.</p>
+  </footer>
+
+  <script src="js/kalkulator.js"></script>
+</body>
+</html>

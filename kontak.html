@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header>
@@ -20,6 +21,7 @@
           <li><a href="proyek.html">Proyek</a></li>
           <li><a href="kontak.html" aria-current="page">Kontak</a></li>
           <li><a href="js/kantin.sekolah/kantin.smkn1.html">Kantin Sekolah</a></li>
+          <li><a href="kalkulator.html">Kalkulator Nilai</a></li>
         </ul>
       </nav>
       <!-- Tantangan: menu ponsel yang bisa dibuka-tutup -->
@@ -31,9 +33,11 @@
             <li><a href="proyek.html">Proyek</a></li>
             <li><a href="kontak.html" aria-current="page">Kontak</a></li>
             <li><a href="js/kantin.sekolah/kantin.smkn1.html">Kantin Sekolah</a></li>
+            <li><a href="kalkulator.html">Kalkulator Nilai</a></li>
           </ul>
         </nav>
       </details>
+      <button type="button" id="tombol-tema" aria-label="Ubah tema halaman">Mode Gelap</button>
     </div>
   </header>
 
@@ -69,9 +73,10 @@
             </p>
             <p class="form-field form-field-penuh">
               <label for="pesan">Pesan</label>
-              <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini" required></textarea>
+              <textarea id="pesan" name="pesan" rows="5" maxlength="300" placeholder="Tulis pesan Anda di sini" required></textarea>
             </p>
           </div>
+          <p class="form-status" id="hitung-karakter" role="status" aria-live="polite">0/300 karakter</p>
           <button type="submit">Buka aplikasi email</button>
           <p class="form-status" role="status" aria-live="polite" hidden></p>
         </form>

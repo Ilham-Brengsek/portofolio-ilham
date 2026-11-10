@@ -37,6 +37,45 @@ body {
   line-height: 1.7;
 }
 
+body.gelap {
+  color-scheme: dark;
+  --ink: #e5edf1;
+  --muted: #b6c4ca;
+  --navy: #cde2e7;
+  --teal: #6dd1cb;
+  --teal-light: #23423f;
+  --coral: #ff9a7f;
+  --gold: #f2bd54;
+  --paper: #111b22;
+  --white: #1c2a33;
+  --line: #344650;
+  --shadow: 0 14px 36px rgba(0, 0, 0, 0.2);
+  --shadow-hover: 0 16px 34px rgba(0, 0, 0, 0.3);
+  background:
+    radial-gradient(ellipse at 10% 12%, rgba(35, 66, 63, 0.45), transparent 34rem),
+    var(--paper);
+}
+
+body.gelap header,
+body.gelap th,
+body.gelap footer {
+  background: #152832;
+}
+
+body.gelap header h1,
+body.gelap nav a,
+body.gelap th {
+  color: #e5edf1;
+}
+
+body.gelap nav a:hover {
+  color: #183b4e;
+}
+
+body.gelap footer a:hover {
+  color: #e5edf1;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -273,14 +312,12 @@ main section > h2:first-child::after {
   height: 168px;
   aspect-ratio: 1;
   flex: 0 0 auto;
-  overflow: hidden;
-  padding: 5px;
-  border: 3px solid var(--white);
+  border: 0;
   border-radius: 50%;
   background: var(--white);
   object-fit: cover;
-  object-position: center 60%;
-  box-shadow: 0 0 0 2px var(--teal), 0 10px 24px rgba(24, 59, 78, 0.16);
+  object-position: center 55%;
+  box-shadow: 0 0 0 3px var(--teal), 0 8px 20px rgba(24, 59, 78, 0.18);
 }
 
 .hero h2 {
@@ -373,6 +410,27 @@ main section > h2:first-child::after {
   color: var(--muted);
 }
 
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.tombol-filter {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.tombol-filter.aktif {
+  background: var(--navy);
+  color: var(--white);
+}
+
 article img {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -417,6 +475,10 @@ tbody tr:nth-child(even) {
   background: #f0f7f3;
 }
 
+body.gelap tbody tr:nth-child(even) {
+  background: #22323a;
+}
+
 label {
   font-weight: 600;
 }
@@ -426,10 +488,10 @@ input, select, textarea {
   min-width: 0;
   padding: 0.7rem 0.8rem;
   margin-top: 0.4rem;
-  border: 1px solid #c8d6d1;
+  border: 1px solid var(--line);
   border-radius: 8px;
   color: var(--ink);
-  background: #fbfdfb;
+  background: var(--white);
   font: inherit;
   transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
 }
@@ -459,10 +521,18 @@ textarea {
   font-size: 0.92rem;
 }
 
+body.gelap .catatan-form {
+  color: #000000;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0 1rem;
+}
+
+#form-kalkulator > button[type="submit"] {
+  margin-top: 1cm;
 }
 
 .form-field {

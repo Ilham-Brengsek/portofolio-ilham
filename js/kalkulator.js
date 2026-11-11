@@ -20,8 +20,18 @@ if (formKalkulator && hasilKalkulator) {
     const tugas = Number(formKalkulator.elements.tugas.value);
     const uts = Number(formKalkulator.elements.uts.value);
     const uas = Number(formKalkulator.elements.uas.value);
-    const rataRata = hitungRataRata(tugas, uts, uas);
 
+    const nilaiValid = [tugas, uts, uas].every((nilai) => Number.isFinite(nilai) && nilai >= 0 && nilai <= 100);
+
+    if (!nilaiValid) {
+      hasilKalkulator.textContent = "Masukkan nilai tugas, UTS, dan UAS dari 0 sampai 100.";
+      hasilKalkulator.style.color = "#e76f51";
+      hasilKalkulator.hidden = false;
+      return;
+    }
+
+    hasilKalkulator.style.color = "";
+    const rataRata = hitungRataRata(tugas, uts, uas);
     hasilKalkulator.textContent = `Rata-rata: ${rataRata.toFixed(2)} | Predikat: ${predikat(rataRata)}`;
     hasilKalkulator.hidden = false;
   });

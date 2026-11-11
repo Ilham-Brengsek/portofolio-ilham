@@ -72,6 +72,27 @@ body.gelap nav a:hover {
   color: #183b4e;
 }
 
+body.gelap .menu-ponsel summary {
+  color: #e5edf1;
+}
+
+body.gelap .menu-ponsel summary:hover,
+body.gelap .menu-ponsel summary:active {
+  color: #183b4e;
+}
+
+body.gelap .menu-ponsel nav {
+  background: #152832;
+}
+
+body.gelap .menu-ponsel nav a {
+  color: #e5edf1;
+}
+
+body.gelap .menu-ponsel nav a:hover {
+  color: #183b4e;
+}
+
 body.gelap footer a:hover {
   color: #e5edf1;
 }

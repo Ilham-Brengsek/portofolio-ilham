@@ -1,27 +1,38 @@
 // JavaScript portofolio muhammad ilham
 // Dipasang di ketiga halaman dengan defer
 
-// 1. Daftar keahlian (halaman Beranda)
-const skills = [
-  { nama: "HTML", level: "Menengah" },
-  { nama: "CSS", level: "Menengah" },
-  { nama: "Git dan GitHub", level: "Dasar" },
-  { nama: "Desain poster dengan Canva", level: "Mahir" },
-];
-skills.push({ nama: "JavaScript", level: "Dasar" });
+async function muatJson(path, namaGlobal) {
+  try {
+    const response = await fetch(path);
+    if (!response.ok) {
+      throw new Error(`Gagal memuat ${path}: ${response.status}`);
+    }
 
+    const data = await response.json();
+    window[namaGlobal] = data;
+    console.table(data);
+    return data;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+}
+
+// 1. Daftar keahlian (halaman Beranda)
 const daftarSkill = document.querySelector("#daftar-skill");
 const jumlahSkill = document.querySelector("#jumlah-skill");
 
 if (daftarSkill) {
-  skills.forEach((skill) => {
-    const item = document.createElement("li");
-    item.textContent = `${skill.nama} (${skill.level})`;
-    daftarSkill.appendChild(item);
+  muatJson("data/keahlian.json", "dataKeahlian").then((skills) => {
+    skills.forEach((skill) => {
+      const item = document.createElement("li");
+      item.textContent = `${skill.nama} (${skill.level})`;
+      daftarSkill.appendChild(item);
+    });
+    if (jumlahSkill) {
+      jumlahSkill.textContent = `Ada ${skills.length} keahlian yang sedang saya kembangkan.`;
+    }
   });
-  if (jumlahSkill) {
-    jumlahSkill.textContent = `Ada ${skills.length} keahlian yang sedang saya kembangkan.`;
-  }
 }
 
 // 2. Tema gelap (semua halaman)
@@ -73,51 +84,7 @@ if (kotakPesan && hitungKarakter) {
 }
 
 // 4. Daftar proyek dan filter (halaman Proyek)
-const proyek = [
-  {
-    judul: "Halaman Profil Pertama",
-    kategori: "HTML",
-    gambar: "halaman_profil_pertama.png",
-    alt: "Tangkapan layar halaman profil  Masychun Sindu Tamtomo",
-    deskripsi: "Halaman web pertama saya, dibuat dengan HTML dasar.",
-  },
-  {
-    judul: "Form Kontak",
-    kategori: "HTML",
-    gambar: "kontak.png",
-    alt: "Tangkapan layar form kontak berisi lima isian",
-    deskripsi: "Form dengan label dan validasi bawaan browser.",
-  },
-  {
-    judul: "Tabel Jadwal Belajar",
-    kategori: "HTML",
-    gambar: "tabel_jadwal_belajar.png",
-    alt: "Tangkapan layar tabel jadwal belajar mandiri",
-    deskripsi: "Jadwal belajar mingguan dengan thead dan tbody.",
-  },
-  {
-    judul: "Portofolio Responsif",
-    kategori: "CSS",
-    gambar: "portofolio_responsif.jpeg",
-    alt: "Tangkapan layar portofolio di ponsel dan laptop",
-    deskripsi: "Rapi di ponsel, tablet, dan laptop dengan Flexbox.",
-  },
-  {
-    judul: "Kalkulator Nilai Rapor",
-    kategori: "JavaScript",
-    gambar: "kalkulator_nilai_rapor.png",
-    alt: "Tangkapan layar hasil kalkulator nilai di Console",
-    deskripsi: "Rata-rata dan predikat nilai dengan fungsi JavaScript.",
-  },
-  {
-    judul: "Lima Soal Logika",
-    kategori: "JavaScript",
-    gambar: "logika.png",
-    alt: "Tangkapan layar hasil uji lima soal logika",
-    deskripsi: "Lima fungsi logika yang masing-masing diuji 3 masukan.",
-  },
-];
-
+let proyek = [];
 const daftarProyek = document.querySelector("#daftar-proyek");
 const jumlahProyek = document.querySelector("#jumlah-proyek");
 
@@ -175,9 +142,53 @@ function pasangFilter(idTombol, kategori) {
 }
 
 if (daftarProyek) {
-  tampilkanProyek(proyek);
-  pasangFilter("#filter-semua", "Semua");
-  pasangFilter("#filter-html", "HTML");
-  pasangFilter("#filter-css", "CSS");
-  pasangFilter("#filter-js", "JavaScript");
+  muatJson("data/proyek.json", "dataProyek").then((data) => {
+    proyek = data;
+    tampilkanProyek(proyek);
+    pasangFilter("#filter-semua", "Semua");
+    pasangFilter("#filter-html", "HTML");
+    pasangFilter("#filter-css", "CSS");
+    pasangFilter("#filter-js", "JavaScript");
+  });
 }
+
+fetch("data/proyek.json")
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Gagal mengambil JSON");
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.table(data);
+    console.log(data);
+  })
+  .catch(error => {
+    console.error("Gagal mengambil data:", error);
+  });
+
+  const username = "Ilham-Brengsek";
+
+  fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=3`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Gagal mengambil repositori");
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.table(data);
+
+        const daftar = document.getElementById("daftar-repositori");
+
+        daftar.innerHTML = data.map(repo => `
+            <li>
+                <a href="${repo.html_url}" target="_blank">
+                    ${repo.name}
+                </a>
+            </li>
+        `).join("");
+    })
+    .catch(error => {
+        console.error("Gagal mengambil data:", error);
+    });

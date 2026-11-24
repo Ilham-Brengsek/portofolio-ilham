@@ -44,5 +44,19 @@ if (formKontak) {
       statusForm.hidden = true;
       statusForm.textContent = "";
     }
+
+    event.preventDefault();
+    const data = new FormData(formKontak);
+    const subject = encodeURIComponent(`Pesan dari ${data.get("nama")}`);
+    const isiEmail = [
+      `Nama: ${data.get("nama")}`,
+      `Email: ${data.get("email")}`,
+      `Nomor HP: ${data.get("hp") || "-"}`,
+      `Keperluan: ${data.get("keperluan")}`,
+      "",
+      isiPesan,
+    ].join("\n");
+    const body = encodeURIComponent(isiEmail);
+    window.location.href = `mailto:${formKontak.dataset.recipient}?subject=${subject}&body=${body}`;
   });
 }

@@ -6,6 +6,7 @@
   <title>Muhammad Ilham | Proyek</title>
   <meta name="description" content="Lihat proyek latihan web Muhammad Ilham, termasuk halaman profil, form kontak, jadwal belajar, dan kalkulator nilai.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="halaman_profil_pertama-360.webp" imagesrcset="halaman_profil_pertama-360.webp 360w, halaman_profil_pertama.webp 560w" imagesizes="(min-width: 768px) 352px, calc(100vw - 4.25rem)" fetchpriority="high">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/tema.js" defer></script>
   <script src="js/main.js" defer></script>
@@ -46,7 +47,7 @@
         <h2>Proyek Saya</h2>
         <p class="pengantar">Kumpulan hasil belajar saya di Kelas Industri UBIG. Jika foto belum tersedia, placeholder akan ditampilkan. Tambahkan foto ke folder img dengan nama file yang sesuai dengan proyek.</p>
 
-        <div class="filter-group" aria-label="Filter proyek">
+        <div class="filter-group" role="group" aria-label="Filter proyek">
           <button type="button" class="tombol-filter aktif" id="filter-semua">Semua</button>
           <button type="button" class="tombol-filter" id="filter-html">HTML</button>
           <button type="button" class="tombol-filter" id="filter-css">CSS</button>

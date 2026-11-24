@@ -25,7 +25,7 @@ let proyek = [];
 const daftarProyek = document.querySelector("#daftar-proyek");
 const jumlahProyek = document.querySelector("#jumlah-proyek");
 
-function buatKartu(item) {
+function buatKartu(item, index) {
   const kartu = document.createElement("article");
   kartu.className = "kartu";
 
@@ -38,12 +38,19 @@ function buatKartu(item) {
 
   const gambar = document.createElement("img");
   gambar.src = item.gambar;
+  gambar.srcset = `${item.gambar} 360w, ${item.gambarRetina} 560w`;
+  gambar.sizes = "(min-width: 768px) 352px, calc(100vw - 4.25rem)";
   gambar.alt = item.alt;
   gambar.width = 560;
   gambar.height = 315;
-  gambar.loading = "lazy";
+  gambar.loading = index === 0 ? "eager" : "lazy";
   gambar.decoding = "async";
+  if (index === 0) {
+    gambar.fetchPriority = "high";
+  }
   gambar.addEventListener("error", () => {
+    gambar.removeAttribute("srcset");
+    gambar.removeAttribute("sizes");
     gambar.src = "img/proyek-placeholder.svg";
   }, { once: true });
 
@@ -56,7 +63,7 @@ function buatKartu(item) {
 
 function tampilkanProyek(daftar) {
   if (!daftarProyek) return;
-  daftarProyek.replaceChildren(...daftar.map((item) => buatKartu(item)));
+  daftarProyek.replaceChildren(...daftar.map((item, index) => buatKartu(item, index)));
   if (jumlahProyek) {
     jumlahProyek.textContent = `Menampilkan ${daftar.length} dari ${proyek.length} proyek`;
   }

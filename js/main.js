@@ -38,8 +38,6 @@ function buatKartu(item, index) {
 
   const gambar = document.createElement("img");
   gambar.src = item.gambar;
-  gambar.srcset = `${item.gambar} 360w, ${item.gambarRetina} 560w`;
-  gambar.sizes = "(min-width: 768px) 352px, calc(100vw - 4.25rem)";
   gambar.alt = item.alt;
   gambar.width = 560;
   gambar.height = 315;
@@ -49,8 +47,6 @@ function buatKartu(item, index) {
     gambar.fetchPriority = "high";
   }
   gambar.addEventListener("error", () => {
-    gambar.removeAttribute("srcset");
-    gambar.removeAttribute("sizes");
     gambar.src = "img/proyek-placeholder.svg";
   }, { once: true });
 

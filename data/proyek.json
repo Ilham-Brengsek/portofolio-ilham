@@ -3,7 +3,6 @@
     "judul": "Halaman Profil Pertama",
     "kategori": "HTML",
     "gambar": "halaman_profil_pertama-360.webp",
-    "gambarRetina": "halaman_profil_pertama.webp",
     "alt": "Tangkapan layar halaman profil muhammad ilham",
     "deskripsi": "Halaman web pertama saya, dibuat dengan HTML dasar."
   },
@@ -11,7 +10,6 @@
     "judul": "Form Kontak",
     "kategori": "HTML",
     "gambar": "kontak-360.webp",
-    "gambarRetina": "kontak.webp",
     "alt": "Tangkapan layar form kontak berisi lima isian",
     "deskripsi": "Form dengan label dan validasi bawaan browser."
   },
@@ -19,7 +17,6 @@
     "judul": "Tabel Jadwal Belajar",
     "kategori": "HTML",
     "gambar": "tabel_jadwal_belajar-360.webp",
-    "gambarRetina": "tabel_jadwal_belajar.webp",
     "alt": "Tangkapan layar tabel jadwal belajar mandiri",
     "deskripsi": "Jadwal belajar mingguan dengan thead dan tbody."
   },
@@ -27,7 +24,6 @@
     "judul": "Portofolio_Responsif",
     "kategori": "CSS",
     "gambar": "portofolio_responsif-360.webp",
-    "gambarRetina": "portofolio_responsif.webp",
     "alt": "Tangkapan layar portofolio di ponsel dan laptop",
     "deskripsi": "Rapi di ponsel, tablet, dan laptop dengan Flexbox."
   },
@@ -35,7 +31,6 @@
     "judul": "Kalkulator Nilai Rapor",
     "kategori": "JavaScript",
     "gambar": "kalkulator_nilai_rapor-360.webp",
-    "gambarRetina": "kalkulator_nilai_rapor.webp",
     "alt": "Tangkapan layar hasil kalkulator nilai di Console",
     "deskripsi": "Rata-rata dan predikat nilai dengan fungsi JavaScript."
   },
@@ -43,7 +38,6 @@
     "judul": "Lima Soal Logika",
     "kategori": "JavaScript",
     "gambar": "logika-360.webp",
-    "gambarRetina": "logika.webp",
     "alt": "Tangkapan layar hasil uji lima soal logika",
     "deskripsi": "Lima fungsi logika yang masing-masing diuji 3 masukan."
   }

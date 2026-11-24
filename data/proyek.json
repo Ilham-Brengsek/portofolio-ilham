@@ -2,42 +2,42 @@
   {
     "judul": "Halaman Profil Pertama",
     "kategori": "HTML",
-    "gambar": "halaman_profil_pertama.png",
+    "gambar": "halaman_profil_pertama.webp",
     "alt": "Tangkapan layar halaman profil muhammad ilham",
     "deskripsi": "Halaman web pertama saya, dibuat dengan HTML dasar."
   },
   {
     "judul": "Form Kontak",
     "kategori": "HTML",
-    "gambar": "kontak.png",
+    "gambar": "kontak.webp",
     "alt": "Tangkapan layar form kontak berisi lima isian",
     "deskripsi": "Form dengan label dan validasi bawaan browser."
   },
   {
     "judul": "Tabel Jadwal Belajar",
     "kategori": "HTML",
-    "gambar": "tabel_jadwal_belajar.png",
+    "gambar": "tabel_jadwal_belajar.webp",
     "alt": "Tangkapan layar tabel jadwal belajar mandiri",
     "deskripsi": "Jadwal belajar mingguan dengan thead dan tbody."
   },
   {
     "judul": "Portofolio_Responsif",
     "kategori": "CSS",
-    "gambar": "portofolio_responsif.jpeg",
+    "gambar": "portofolio_responsif.webp",
     "alt": "Tangkapan layar portofolio di ponsel dan laptop",
     "deskripsi": "Rapi di ponsel, tablet, dan laptop dengan Flexbox."
   },
   {
     "judul": "Kalkulator Nilai Rapor",
     "kategori": "JavaScript",
-    "gambar": "kalkulator_nilai_rapor.png",
+    "gambar": "kalkulator_nilai_rapor.webp",
     "alt": "Tangkapan layar hasil kalkulator nilai di Console",
     "deskripsi": "Rata-rata dan predikat nilai dengan fungsi JavaScript."
   },
   {
     "judul": "Lima Soal Logika",
     "kategori": "JavaScript",
-    "gambar": "logika.png",
+    "gambar": "logika.webp",
     "alt": "Tangkapan layar hasil uji lima soal logika",
     "deskripsi": "Lima fungsi logika yang masing-masing diuji 3 masukan."
   }

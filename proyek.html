@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Muhammad Ilham | Proyek</title>
   <meta name="description" content="Lihat proyek latihan web Muhammad Ilham, termasuk halaman profil, form kontak, jadwal belajar, dan kalkulator nilai.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/tema.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -53,8 +52,45 @@
           <button type="button" class="tombol-filter" id="filter-css">CSS</button>
           <button type="button" class="tombol-filter" id="filter-js">JavaScript</button>
         </div>
-        <p id="jumlah-proyek" class="pengantar"></p>
-        <div id="daftar-proyek" class="daftar-kartu" aria-live="polite"></div>
+        <p id="jumlah-proyek" class="pengantar" role="status" aria-live="polite">Memuat proyek...</p>
+        <div id="daftar-proyek" class="daftar-kartu" aria-busy="true">
+          <article class="kartu kartu-placeholder" aria-hidden="true">
+            <span class="placeholder-kategori"></span>
+            <h3 class="placeholder-judul"></h3>
+            <div class="placeholder-gambar"></div>
+            <p><span></span><span></span></p>
+          </article>
+          <article class="kartu kartu-placeholder" aria-hidden="true">
+            <span class="placeholder-kategori"></span>
+            <h3 class="placeholder-judul"></h3>
+            <div class="placeholder-gambar"></div>
+            <p><span></span><span></span></p>
+          </article>
+          <article class="kartu kartu-placeholder" aria-hidden="true">
+            <span class="placeholder-kategori"></span>
+            <h3 class="placeholder-judul"></h3>
+            <div class="placeholder-gambar"></div>
+            <p><span></span><span></span></p>
+          </article>
+          <article class="kartu kartu-placeholder" aria-hidden="true">
+            <span class="placeholder-kategori"></span>
+            <h3 class="placeholder-judul"></h3>
+            <div class="placeholder-gambar"></div>
+            <p><span></span><span></span></p>
+          </article>
+          <article class="kartu kartu-placeholder" aria-hidden="true">
+            <span class="placeholder-kategori"></span>
+            <h3 class="placeholder-judul"></h3>
+            <div class="placeholder-gambar"></div>
+            <p><span></span><span></span></p>
+          </article>
+          <article class="kartu kartu-placeholder" aria-hidden="true">
+            <span class="placeholder-kategori"></span>
+            <h3 class="placeholder-judul"></h3>
+            <div class="placeholder-gambar"></div>
+            <p><span></span><span></span></p>
+          </article>
+        </div>
       </section>
 
       <!-- FAQ dengan details dan summary -->

@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Muhammad Ilham | Beranda</title>
   <meta name="description" content="Portofolio Muhammad Ilham, siswa SMK yang sedang belajar pengembangan web di Kelas Industri UBIG.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
+  <script src="js/tema.js" defer></script>
 </head>
 <body>
   <header>
@@ -44,7 +42,7 @@
   <main>
     <div class="container">
       <section class="hero">
-        <img src="foto_saya.jpeg" alt="Foto profil muhammad ilham" width="180">
+        <img src="foto_saya.webp" srcset="foto_saya-210.webp 210w, foto_saya.webp 420w" sizes="(min-width: 768px) 210px, 168px" alt="Foto profil Muhammad Ilham" width="180" height="180" fetchpriority="high">
         <div>
           <h2>Halo, saya Ilham.</h2>
           <p>Siswa kelas X SMK, calon Junior Web Developer di Kelas Industri UBIG.</p>
@@ -82,8 +80,14 @@
 
         <section class="kartu">
           <h2>Keahlian</h2>
-          <ul id="daftar-skill"></ul>
-          <p id="jumlah-skill"></p>
+          <ul>
+            <li>HTML (Menengah)</li>
+            <li>CSS (Menengah)</li>
+            <li>Git dan GitHub (Dasar)</li>
+            <li>bermain game (pro)</li>
+            <li>JavaScript (Dasar)</li>
+          </ul>
+          <p>Ada 5 keahlian yang sedang saya kembangkan.</p>
         </section>
       </div>
 
@@ -122,20 +126,15 @@
     </div>
   </main>
 
-  <section class="github-section">
-    <h2>Repositori GitHub Saya</h2>
+  <section class="github-section" aria-labelledby="github-heading">
+    <h2 id="github-heading">Repositori GitHub Saya</h2>
 
-    <p>
-        Daftar ini diambil langsung dari GitHub
-        setiap kali halaman dibuka.
-    </p>
-
-    <div id="daftar-repositori">
-        Memuat repositori...
-    </div>
+    <p>Kunjungi GitHub untuk melihat kode sumber dan proyek lainnya.</p>
+    <ul>
+      <li><a href="https://github.com/Ilham-Brengsek/portofolio-ilham" target="_blank" rel="noopener noreferrer">Portofolio Ilham di GitHub</a></li>
+    </ul>
 </section>
 
-  <link rel="icon" href="favicon.ico">
   <div id="hasil"></div>
 
   <footer>

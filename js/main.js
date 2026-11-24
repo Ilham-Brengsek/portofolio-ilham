@@ -1,5 +1,4 @@
-// JavaScript portofolio muhammad ilham
-// Dipasang di ketiga halaman dengan defer
+// Data dan filter untuk beranda dan halaman proyek.
 
 async function muatJson(path, namaGlobal) {
   try {
@@ -9,81 +8,19 @@ async function muatJson(path, namaGlobal) {
     }
 
     const data = await response.json();
+    if (!Array.isArray(data)) {
+      throw new Error(`Format data ${path} tidak valid.`);
+    }
+
     window[namaGlobal] = data;
-    console.table(data);
     return data;
   } catch (error) {
     console.error(error);
-    return [];
-  }
-}
-
-// 1. Daftar keahlian (halaman Beranda)
-const daftarSkill = document.querySelector("#daftar-skill");
-const jumlahSkill = document.querySelector("#jumlah-skill");
-
-if (daftarSkill) {
-  muatJson("data/keahlian.json", "dataKeahlian").then((skills) => {
-    skills.forEach((skill) => {
-      const item = document.createElement("li");
-      item.textContent = `${skill.nama} (${skill.level})`;
-      daftarSkill.appendChild(item);
-    });
-    if (jumlahSkill) {
-      jumlahSkill.textContent = `Ada ${skills.length} keahlian yang sedang saya kembangkan.`;
-    }
-  });
-}
-
-// 2. Tema gelap (semua halaman)
-const tombolTema = document.querySelector("#tombol-tema");
-const simpanTema = (tema) => {
-  try {
-    localStorage.setItem("tema", tema);
-  } catch (error) {
-    console.warn("Tema tidak dapat disimpan:", error);
-  }
-};
-
-const ambilTema = () => {
-  try {
-    return localStorage.getItem("tema");
-  } catch (error) {
-    console.warn("Tema tidak dapat dibaca:", error);
     return null;
   }
-};
-
-if (tombolTema) {
-  if (ambilTema() === "gelap") {
-    document.body.classList.add("gelap");
-    tombolTema.textContent = "Mode Terang";
-  } else {
-    tombolTema.textContent = "Mode Gelap";
-  }
-
-  tombolTema.addEventListener("click", () => {
-    document.body.classList.toggle("gelap");
-    if (document.body.classList.contains("gelap")) {
-      simpanTema("gelap");
-      tombolTema.textContent = "Mode Terang";
-    } else {
-      simpanTema("terang");
-      tombolTema.textContent = "Mode Gelap";
-    }
-  });
 }
 
-// 3. Penghitung karakter pesan (halaman Kontak)
-const kotakPesan = document.querySelector("#pesan");
-const hitungKarakter = document.querySelector("#hitung-karakter");
-if (kotakPesan && hitungKarakter) {
-  kotakPesan.addEventListener("input", () => {
-    hitungKarakter.textContent = `${kotakPesan.value.length}/300 karakter`;
-  });
-}
-
-// 4. Daftar proyek dan filter (halaman Proyek)
+// Daftar proyek dan filter.
 let proyek = [];
 const daftarProyek = document.querySelector("#daftar-proyek");
 const jumlahProyek = document.querySelector("#jumlah-proyek");
@@ -102,7 +39,10 @@ function buatKartu(item) {
   const gambar = document.createElement("img");
   gambar.src = item.gambar;
   gambar.alt = item.alt;
-  gambar.width = 280;
+  gambar.width = 560;
+  gambar.height = 315;
+  gambar.loading = "lazy";
+  gambar.decoding = "async";
   gambar.addEventListener("error", () => {
     gambar.src = "img/proyek-placeholder.svg";
   }, { once: true });
@@ -143,6 +83,15 @@ function pasangFilter(idTombol, kategori) {
 
 if (daftarProyek) {
   muatJson("data/proyek.json", "dataProyek").then((data) => {
+    daftarProyek.removeAttribute("aria-busy");
+    if (!data) {
+      daftarProyek.replaceChildren();
+      if (jumlahProyek) {
+        jumlahProyek.textContent = "Daftar proyek belum dapat dimuat.";
+      }
+      return;
+    }
+
     proyek = data;
     tampilkanProyek(proyek);
     pasangFilter("#filter-semua", "Semua");
@@ -151,44 +100,3 @@ if (daftarProyek) {
     pasangFilter("#filter-js", "JavaScript");
   });
 }
-
-fetch("data/proyek.json")
-  .then(response => {
-    if (!response.ok) {
-      throw new Error("Gagal mengambil JSON");
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.table(data);
-    console.log(data);
-  })
-  .catch(error => {
-    console.error("Gagal mengambil data:", error);
-  });
-
-  const username = "Ilham-Brengsek";
-
-  fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=3`)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Gagal mengambil repositori");
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.table(data);
-
-        const daftar = document.getElementById("daftar-repositori");
-
-        daftar.innerHTML = data.map(repo => `
-            <li>
-                <a href="${repo.html_url}" target="_blank">
-                    ${repo.name}
-                </a>
-            </li>
-        `).join("");
-    })
-    .catch(error => {
-        console.error("Gagal mengambil data:", error);
-    });

@@ -36,3 +36,24 @@ if (tombolTema) {
     }
   });
 }
+
+const tombolKeAtas = document.createElement("button");
+tombolKeAtas.type = "button";
+tombolKeAtas.className = "tombol-ke-atas";
+tombolKeAtas.setAttribute("aria-label", "Kembali ke atas");
+tombolKeAtas.title = "Kembali ke atas";
+tombolKeAtas.textContent = "Kembali ke atas";
+tombolKeAtas.hidden = true;
+document.body.append(tombolKeAtas);
+
+const perbaruiTombolKeAtas = () => {
+  tombolKeAtas.hidden = window.scrollY <= 0;
+};
+
+window.addEventListener("scroll", perbaruiTombolKeAtas, { passive: true });
+perbaruiTombolKeAtas();
+tombolKeAtas.addEventListener("click", () => {
+  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+});

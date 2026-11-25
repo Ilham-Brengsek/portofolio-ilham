@@ -393,6 +393,25 @@ main section > h2:first-child::after {
   box-shadow: 0 7px 16px rgba(24, 59, 78, 0.16);
 }
 
+.tombol-ke-atas,
+.tombol-ke-atas[hidden] {
+  display: none;
+}
+
+.tombol-ke-atas:not([hidden]) {
+  position: fixed;
+  left: 50%;
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 2;
+  display: block;
+  width: max-content;
+  padding: 0.65rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  translate: -50% 0;
+}
+
 .kartu {
   padding: 1.25rem;
   margin-bottom: 1.25rem;
